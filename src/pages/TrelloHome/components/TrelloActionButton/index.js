@@ -37,8 +37,9 @@ const TrelloActionButton = ({ list }) => {
     return (
       <div className="fromAdd">
         <TextAreaAutoSize
+          minRows={4}
           placeholder={placeholder}
-          onBlur={CloseFrom}
+          // onBlur={CloseFrom}
           onChange={changeTitle}
           value={textArea}
           autoFocus

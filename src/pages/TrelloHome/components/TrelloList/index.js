@@ -1,4 +1,5 @@
 import TrelloActionButton from "../TrelloActionButton"
+import TrelloCard from "../TrelloCard"
 import "./TrelloList.Style.css"
 const TrelloList = () => {
   return (
@@ -7,48 +8,15 @@ const TrelloList = () => {
         <div className="title">
           <h2>Lam Lam</h2>
         </div>
-        <div className="contentBx">
-          <ul>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-          </ul>
-        </div>
-        <TrelloActionButton list={[1]} />
+        <TrelloCard />
       </div>
       <div className="trelloBx">
         <div className="title">
           <h2>Lam Lam</h2>
         </div>
-        <div className="contentBx">
-          <ul>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-          </ul>
-        </div>
+        <TrelloCard />
       </div>
-      <div className="trelloBx">
-        <div className="title">
-          <h2>Lam Lam</h2>
-        </div>
-        <div className="contentBx">
-          <ul>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-            <li>Lam Hoang An</li>
-          </ul>
-        </div>
-      </div>
+
       <div className="trelloBx">
         <TrelloActionButton />
       </div>

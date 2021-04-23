@@ -29,7 +29,11 @@ body {
     );
   background-blend-mode: overlay, lighten, overlay, color-burn, normal;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
