@@ -1,11 +1,17 @@
 #trello_list {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: scroll;
   /*display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 0px 0px;*/
 } 
+::-webkit-scrollbar{
+  opacity: 0;
+}
+.trelloContainer{
+  display: flex;
+}
 .trelloBx {
   margin: 10px;
   width: 280px;

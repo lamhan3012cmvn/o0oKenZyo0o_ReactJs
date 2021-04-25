@@ -2,8 +2,10 @@ import TextAreaAutoSize from "react-textarea-autosize"
 import { useState } from "react"
 import { IoAddCircleOutline, IoCloseOutline } from "react-icons/io5"
 import "./TrelloActionButton.Style.css"
+import { useDispatch } from "react-redux"
+import { addItems, addList } from "../../../../ redux/_actions/Trello"
 
-const TrelloActionButton = ({ list }) => {
+const TrelloActionButton = ({ list, index }) => {
   const btnText = list ? "Add another list" : "Add another card"
   const btnColor = list ? "#FFF" : "#000"
   const btnBackground = list ? "rgba( 255, 255, 255, 0.2 )" : "#FFF"
@@ -16,6 +18,9 @@ const TrelloActionButton = ({ list }) => {
   const changeTitle = e => {
     setTextArea(e.target.value)
   }
+
+  const dispatch = useDispatch()
+
   const renderAddBtn = () => {
     return (
       <div
@@ -30,6 +35,13 @@ const TrelloActionButton = ({ list }) => {
   }
 
   const renderOpenFrom = () => {
+    const AddFrom = () => {
+      if (list) {
+        dispatch(addItems(textArea, index))
+      } else {
+        dispatch(addList(textArea))
+      }
+    }
     const placeholder = list
       ? "Enter List Title..."
       : "Enter a title for this card ..."
@@ -39,13 +51,13 @@ const TrelloActionButton = ({ list }) => {
         <TextAreaAutoSize
           minRows={4}
           placeholder={placeholder}
-          // onBlur={CloseFrom}
+          //
           onChange={changeTitle}
           value={textArea}
           autoFocus
         />
         <div className="btnGroup">
-          <p>Add</p>
+          <p onClick={AddFrom}>Add</p>
           <IoCloseOutline />
         </div>
       </div>
